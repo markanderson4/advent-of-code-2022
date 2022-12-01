@@ -28,7 +28,7 @@ numArray.sort(function(a, b) {
 
 console.log("Highest elf calories: " + Math.max.apply(Math, elfCalories));
 
-elfCalories.sort(function(a, b) { return a - b; });
+elfCalories.sort(function(a, b) { return b - a; });
 
-console.log("Sum of top 3 calorie counts: " + (elfCalories[elfCalories.length - 1] + elfCalories[elfCalories.length - 2] + elfCalories[elfCalories.length - 3]) )
+console.log("Sum of top 3 calorie counts: " + (elfCalories[0] + elfCalories[1] + elfCalories[2]) )
 
