@@ -21,14 +21,8 @@ for(var i = 0; i < allData.length; i++){
     }
 }
 
-var numArray = [140000, 104, 99];
-numArray.sort(function(a, b) {
-  return a - b;
-});
-
 console.log("Highest elf calories: " + Math.max.apply(Math, elfCalories));
 
 elfCalories.sort(function(a, b) { return b - a; });
 
-console.log("Sum of top 3 calorie counts: " + (elfCalories[0] + elfCalories[1] + elfCalories[2]) )
-
+console.log("Sum of top 3 calorie counts: " + (elfCalories[0] + elfCalories[1] + elfCalories[2]))
