@@ -78,26 +78,19 @@ function solve(allData, numKnots){
         const commands = allData[i].split(' ');
         const distance = commands[1];
         const direction = commands[0];
-
-        // console.log("NEW COMMAND: " + allData[i])
-        
         for(let k = 0; k < distance; k++){
             knots[0] = move(knots[0], direction)
-            //no movement needed
             for(tailNumber = 1; tailNumber < knots.length; tailNumber++) {
                 let leadingKnot = tailNumber - 1
-                // console.log("leadingKnot: " + getKnotString(knots[leadingKnot]))
-                // console.log("trailingKnot: " + getKnotString(knots[tailNumber]))
-                if(getKnotString(knots[0]) == "-1,5"){
-                    let z = 1
-                }
+                // no movement needed
                 if(difference(knots[leadingKnot].xFromStart, knots[tailNumber].xFromStart) < 2 && difference(knots[leadingKnot].yFromStart,  knots[tailNumber].yFromStart) < 2){
                     continue
                 }
-                //movement needed straight
+                // movement needed straight
                 else if(difference(knots[leadingKnot].xFromStart,  knots[tailNumber].xFromStart) == 0 || difference(knots[leadingKnot].yFromStart,  knots[tailNumber].yFromStart) == 0){
                     knots[tailNumber] = move( knots[tailNumber], getNeededStraightDirection(knots[leadingKnot], knots[tailNumber]))
                 }
+                // movement needed diagonally
                 else {
                     let diagonalMove = getDiagonalMovement(knots[leadingKnot],  knots[tailNumber])
                     knots[tailNumber] = move( knots[tailNumber], diagonalMove.charAt(0))
