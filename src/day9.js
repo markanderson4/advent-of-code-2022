@@ -70,7 +70,6 @@ function getKnotString(knot) {
     return knot.xFromStart + "," + knot.yFromStart
 }
 
-
 function solve(allData, numKnots){
     let knots = makeKnots(numKnots)
     let uniqueTailPositions = []
