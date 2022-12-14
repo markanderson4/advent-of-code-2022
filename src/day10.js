@@ -8,10 +8,6 @@ function syncReadFile(filename) {
 
 var allData = syncReadFile('data/day10input.txt');
 
-function difference(a, b) {
-    return Math.abs(a - b);
-}
-
 var cycleNumber = 0;
 var x = 1;
 var sum = 0;
@@ -25,7 +21,7 @@ function adjustSignalStrength(sum, cycleNumber, x) {
 }
 
 function updateOutput(cycleNumber, x) {
-    if(difference(cycleNumber, x+1) < 2) {
+    if(Math.abs(cycleNumber - (x+1)) < 2) {
         output += '#'
     } else {
         output += '.'
